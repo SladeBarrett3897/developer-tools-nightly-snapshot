@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'dev.learning.snapshot'
+version = '1.0.0'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
+}
+
+application {
+    mainClass = 'dev.learning.snapshot.DeveloperToolsSnapshotService'
+}
+
+tasks.register('snapshotDecisionTest', JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.learning.snapshot.SnapshotPolicyTest'
+    dependsOn testClasses
+}

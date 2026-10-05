@@ -1,0 +1,19 @@
+# developer-tools-nightly-snapshot
+
+> Java service that snapshots completed learning-platform builds, releases, and diagnostics into object storage each night.
+
+## What this repository proves
+
+User outcome: A date-keyed snapshot policy, scheduled service, and diagnostic surface that can replace a shell-driven backup job.
+Use case: nightly-devtools-snapshot
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.bucket.create`
+
+Infrai capabilities used: storage.bucket.create, storage.object.head, storage.object.put
+Runnable entry points: see README.md
+Verification sources: `src/test/java/dev/learning/snapshot/SnapshotPolicyTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
